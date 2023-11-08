@@ -79,7 +79,7 @@ def on_click_callback():
         st.session_state.token_count += cb.total_tokens
 
 load_css()
-initialize_session_state()
+#initialize_session_state()
 
 st.title("Hello Custom CSS Chatbot 🤖")
 
