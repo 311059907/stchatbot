@@ -86,7 +86,7 @@ st.session_state.conversation = None
 
 
 
-st.title("Hello Custom CSS Chatbot 🤖")
+st.title("您好，我是小智，您的購物好幫手 🤖")
 
 chat_placeholder = st.container()
 prompt_placeholder = st.form("chat-form")
