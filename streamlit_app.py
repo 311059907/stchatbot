@@ -31,13 +31,26 @@ def load_css():
         css = f"<style>{f.read()}</style>"
         st.markdown(css, unsafe_allow_html=True)
 
+def generate_revised_content(content):
+    response = OpenAI.completions.create(
+        model="davinci",  # Your desired model
+        prompt=content,
+        max_tokens=30000,  # Extended for longer responses
+        temperature=0.5,  # Adjust for creativity
+        top_p=1,  # Control response diversity
+        frequency_penalty=0,  # Fine-tune word frequency
+        presence_penalty=0  # Fine-tune word presence
+    )
+    return response.choices[0].text
+
 def initialize_session_state():
     if "history" not in st.session_state:
         st.session_state.history = []
     if "token_count" not in st.session_state:
         st.session_state.token_count = 0
     if "conversation" not in st.session_state:
-        llm = OpenAI(
+        #llm = OpenAI(
+        llm = OpenAI.ChatCompletion.create(
             temperature=0,
             #openai_api_key=st.secrets["openai_api_key"],
             openai_api_key="sk-sS5zs2j2MFysOcvh64vLT3BlbkFJDDanIvNwdKLKc08vMfu",
