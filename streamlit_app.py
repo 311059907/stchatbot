@@ -113,10 +113,10 @@ with chat_placeholder:
         st.markdown("")
 
 with prompt_placeholder:
-    st.markdown("**Chat**")
+    st.markdown("**與小智聊聊**")
     cols = st.columns((6, 1))
     cols[0].text_input(
-        "與小智聊聊",
+        "chat",
         value="小智您好",
         label_visibility="collapsed",
         key="human_prompt",
