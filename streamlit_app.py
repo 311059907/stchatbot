@@ -40,7 +40,7 @@ def initialize_session_state():
         llm = OpenAI(
             temperature=0,
             #openai_api_key=st.secrets["openai_api_key"],
-            openai_api_key="sk-sS5zs2j2MFysOcvh64vLT3BlbkFJDDanIvNwdKLKc08vMfu"
+            openai_api_key="sk-sS5zs2j2MFysOcvh64vLT3BlbkFJDDanIvNwdKLKc08vMfu",
             model_name="text-davinci-003"
             #text-davinci-003：這是一個通用的文字模型，可以用來生成文字、翻譯語言、寫不同類型的創意內容等
             #code-davinci-002：這是一個程式碼生成模型，可以用來生成程式碼、翻譯程式碼、寫不同類型的程式碼等
