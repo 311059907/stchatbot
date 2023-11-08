@@ -80,6 +80,11 @@ def on_click_callback():
 
 load_css()
 #initialize_session_state()
+st.session_state.history = []
+st.session_state.token_count = 0
+st.session_state.conversation = None
+
+
 
 st.title("Hello Custom CSS Chatbot 🤖")
 
