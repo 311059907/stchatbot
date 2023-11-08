@@ -1,8 +1,13 @@
 from dataclasses import dataclass
 from typing import Literal
+#pip install streamlit --user
 import streamlit as st
 
-from langchain import OpenAI
+#pip install openai --user
+#pip install langchain --user
+#from langchain import OpenAI
+import langchain
+from langchain.llms import OpenAI
 from langchain.callbacks import get_openai_callback
 from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationSummaryMemory
@@ -27,8 +32,11 @@ def initialize_session_state():
     if "conversation" not in st.session_state:
         llm = OpenAI(
             temperature=0,
-            openai_api_key=st.secrets["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"],
+            openai_api_key=st.secrets["openai_api_key"],
             model_name="text-davinci-003"
+            #text-davinci-003：這是一個通用的文字模型，可以用來生成文字、翻譯語言、寫不同類型的創意內容等
+            #code-davinci-002：這是一個程式碼生成模型，可以用來生成程式碼、翻譯程式碼、寫不同類型的程式碼等
+            #summarization-davinci-002：這是一個文字摘要模型，可以用來生成文字摘要、翻譯文字摘要、寫不同類型的文字摘要等pip install --upgrade openai
         )
         st.session_state.conversation = ConversationChain(
             llm=llm,
