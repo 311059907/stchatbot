@@ -116,13 +116,13 @@ with prompt_placeholder:
     st.markdown("**Chat**")
     cols = st.columns((6, 1))
     cols[0].text_input(
-        "Chat",
-        value="Hello bot",
+        "與小智聊聊",
+        value="小智您好",
         label_visibility="collapsed",
         key="human_prompt",
     )
     cols[1].form_submit_button(
-        "Submit", 
+        "送出", 
         type="primary", 
         on_click=on_click_callback, 
     )
